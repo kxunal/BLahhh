@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Checker</h1>
+    <label for="zoya">Does Zoya love Mirja?</label>
+    <select id="zoya">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <br><br>
+    <label for="mirja">Does Mirja love only Zoya?</label>
+    <select id="mirja">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <br><br>
+    <button onclick="checkLove()">Check</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkLove() {
+            const zoyaLovesMirja = document.getElementById('zoya').value;
+            const mirjaLovesZoya = document.getElementById('mirja').value;
+            const resultDiv = document.getElementById('result');
+
+            if (zoyaLovesMirja === 'yes' && mirjaLovesZoya === 'yes') {
+                resultDiv.textContent = "True love ❤️";
+            } else if (zoyaLovesMirja === 'yes' && mirjaLovesZoya === 'no') {
+                resultDiv.textContent = "Randi rona from both sides 😢";
+            } else if (zoyaLovesMirja === 'no' && mirjaLovesZoya === 'yes') {
+                resultDiv.textContent = "Time pass from Mirja's side 🕒";
+            } else {
+                resultDiv.textContent = "No love at all 💔";
+            }
+        }
+    </script>
+</body>
+</html>
